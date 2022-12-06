@@ -10,22 +10,22 @@ for file in files:
         extension = extension[1:]
         if os.path.exists(path + '/' + extension) and len(extension) != 0:
             shutil.move(path + '/' + file, path + '/' + extension + '/' + file)
-            print(f'File {file} was moved to {path}\{extension}')
+            print(f'The file {file} has been moved to {path}\{extension}')
         elif len(extension) != 0:
             os.makedirs(path + '/' + extension)
-            print(f'Folder "{extension}" was created!')
+            print(f'Folder "{extension}" has been created!')
             shutil.move(path + '/' + file, path + '/' + extension + '/' + file)
-            print(f'File {file} was moved to {path}\{extension}')
+            print(f'The file {file} has been moved to {path}\{extension}')
         else:
-            if os.path.exists(path + '/' +  '_unsorted_files'):
-                shutil.move(path + '/' + file, path + '/' + '_unsorted_files' + '/' + file)
-                print(f'File {file} was moved to {path}\\_unsorted_files')
+            if os.path.exists(path + '/' + 'without_extension'):
+                shutil.move(path + '/' + file, path + '/' + 'without_extension' + '/' + file)
+                print(f'The file {file} has been moved to {path}\\without_extension')
             else:
-                os.makedirs(path + '/' + '_unsorted_files')
-                print('Folder _unsorted_files was created!')
-                shutil.move(path + '/' + file, path + '/' + '_unsorted_files' + '/' + file)
-                print(f'File {file} was moved to {path}\\_unsorted_files')
-
+                os.makedirs(path + '/' + 'without_extension')
+                print('Folder without_extension has been created!')
+                shutil.move(path + '/' + file, path + '/' + 'without_extension' + '/' + file)
+                print(f'The file {file} has been moved to {path}\\without_extension')
+                
 
 
 
